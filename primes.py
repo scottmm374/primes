@@ -1,6 +1,13 @@
 def main():
-    x = create_primes_list(2000)
-    print(x)
+    len_primes, prime_set, num_range = create_primes_list(2000)
+    # Checks len of qty for primes
+    print(len(len_primes))
+    print(num_range)
+
+    lines = calc_lines(num_range, 54)
+    print(lines)
+    # y = create_matrix_prime(prime_set)
+    # print(y)
 
 
 
@@ -15,29 +22,37 @@ def create_primes_list(n):
                 else:
                     prime_list.add(num)
     sorted_list = list(prime_list)
-    return len(sorted_list)
+    return sorted_list, prime_list, num
     
+#  calculate the number or rows needed for number range
+def calc_lines(nums, cols):
+    line_number = round(nums / cols)
+    return line_number
+
+# def create_matrix_prime(prime_set, n):
 
 
-# def create_matrix_prime():
-#     matrix = [[0] * 54 for x in range(1,300)]
 
+#     matrix = [[0] * 54 for x in range(1,38)]
+#     num_list = None
 #     prime_matrix = matrix
 #     num = 0
 #     for y in range(len(prime_matrix)-1):
 #         for x in range(54):
 #             num +=1
 #             prime_matrix[y][x] = num
-#         consec_list = prime_matrix
+#         num_list = prime_matrix
 
-#     for row in range(len(consec_list)-1):
+#     for row in range(len(num_list)-1):
 #         for col in range(54):
-#             if consec_list[row][col] not in primeList:
-#                     consec_list[row][col] = ('00')
+#             if num_list[row][col] not in prime_set:
+#                     num_list[row][col] = ('00')
 #             else:
 #                 box ="\U0001F338"
                    
-#                 consec_list[row][col] = box
+#                 num_list[row][col] = box
+#     return num_list
+    
 
 
 # def count_digit_reduce_prime():
